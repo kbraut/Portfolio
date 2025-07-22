@@ -49,7 +49,7 @@ nav ul li a::after{
     content: '';
     width:0;
     height: 3px;
-    background: #ff004f;
+    background: #02cca0;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -73,7 +73,7 @@ nav ul li a:hover::after{
 }
 
 .header-text h1 span{
-    color: #ff004f;
+    color: #02cca0;
 }
 
 /*about*/
@@ -127,7 +127,7 @@ nav ul li a:hover::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #02cca0;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -144,7 +144,7 @@ nav ul li a:hover::after{
 }
 
 .tab-contents ul li span{ /*colours for networking & cyber-securtyr*/
-    color: #b54769;
+    color: #02cca0;
     font-size: 14px;
 }
 
@@ -203,7 +203,7 @@ nav ul li a:hover::after{
 
 
 .services-list div:hover{
-    background: #ff004f;
+    background: #02cca0;
     transform: translateY(-10px);
 }
 
@@ -239,7 +239,7 @@ nav ul li a:hover::after{
 .layer{
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    background: linear-gradient(rgba(0,0,0,0.6),#02cca0);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -265,7 +265,7 @@ nav ul li a:hover::after{
 
 .layer a{
     margin-top: 20px;
-    color: #ff004f;
+    color: #02cca0;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
@@ -291,7 +291,7 @@ nav ul li a:hover::after{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #ff004f;
+    border: 1px solid #02cca0;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
@@ -302,7 +302,7 @@ nav ul li a:hover::after{
 
 
 .btn:hover{
-    background: #ff004f;
+    background: #02cca0;
 }
 
 /* ***********contact************ */
@@ -318,7 +318,7 @@ nav ul li a:hover::after{
 }
 
 .contact-left p i{
-    color: #ff004f;
+    color: #02cca0;
     margin-right: 15px;
     font-size: 25px;
 }
@@ -341,14 +341,14 @@ nav ul li a:hover::after{
 
 /*social-icons colour from mouse set*/
 .social-icons a:hover{
-    color: #ff004f;
+    color: #02cca0;
     transform: translateY(-5px);
 }
 
 /*cv download*/
 .btn.btn2{
     display: inline-block;
-    background: #ff004f;
+    background: #02cca0;
 }
 
 .contact-right form{
@@ -384,7 +384,7 @@ form .btn2{
 }
 
 .copyright i{
-    color: #ff004f;
+    color: #02cca0;
 }
 
 /* ******css for small screen********* */
@@ -414,7 +414,7 @@ nav .fa-solid{
 
     /*side bar set*/
     nav ul{
-        background: #ff004f;
+        background: #02cca0;
         position: fixed;
         top: 0;
         right: -200px;
