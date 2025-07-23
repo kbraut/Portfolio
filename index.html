@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
     <!-- head -->
@@ -268,3 +269,275 @@
     
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+    <!-- head -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KB Raut</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://kit.fontawesome.com/6df614b3b2.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- body -->
+<body>
+    <!-- sidemenu -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">My services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#ipcalculator">IP Calculator</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+
+            <div class="header-text">
+                <p>Network Engineer</p>
+                <h1>I'm <span>KB Raut</span><br> from Nepal</h1>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- -------About--------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>I am a Network Engineer, Experienced in designing, implementing, and managing secure and scalable network infrastructures. Skilled in configuring and troubleshooting routers, switches, and firewalls (MPLS,BGP, OSPF), optimizing network performance, and ensuring security compliance. Provide technical support, maintain documentation, and continuously stay updated on the latest networking technologies to drive efficiency and innovation.</p>
+
+                         <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')" >Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')" >Experiences</p>
+                            <p class="tab-links" onclick="opentab('education')" >Edu.</p>
+                            <p class="tab-links" onclick="opentab('courses')" >Courses</p>
+                         </div>
+
+                         <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Networking</span><br>configuer the routers, Switchws, Firewalls</li>
+                                <li><span>Cyber Securety</span><br>wireshark configuratiuon</li>
+                            </ul>
+                         </div>
+
+                         <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Sep 2023 - Present </span><br>Broadlink Network and Communication Limited </li>
+                                <li><span>May 2022 - Sep 2023 · 1 yrs 5mo</span><br>Max Net Solutions Pvt.Ltd</li>
+                            </ul>
+                         </div>
+
+                         <div class="tab-contents" id="education" >
+                            <ul>
+                                <li><span>Bachelor of Business Studies</span><br>Tribhuvan University</li>
+                                <li><span>Network and System Administration/Administrator</span><br>Cisco Networking Academy</li>
+                            </ul>
+                         </div>
+                         <div class="tab-contents" id="courses">
+                            <ul>
+                                <li><span>Cisco NetAcad Certified</span><br>CCNA | CCNP ENCOR & ENARSI | CyberOps Associate</li>
+                                <li><span>Fortinet</span><br>FCFC | FCAC - Fortinet Certified Associate Cybersecurity</li>
+                                <li><span>ISE2</span><br>Certified in Cybersecurity (CC)</li>
+                                <li><span>Open Learning-Junos</span><br>Associate (JNCIA-Junos)</li>
+
+                            </ul>
+                         </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   <!-- Services -->
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-server"></i>
+                <h2>Networking</h2>
+                <p>Networking Essentials ( Version 2) Pretest Exam answers</p>
+                <a href="#">Learn more</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-user-secret"></i>
+                <h2>Cyber security</h2>
+                <p>Cyber security is the application of technologies, processes, 
+                    and controls to protect systems, networks, programs</p>
+                <a href="#">Learn more</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Programming</h2>
+                <p>Programming involves tasks such as analysis, generating algorithms, profiling algorithms'
+                     accuracy and resource consumption</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- portpolio -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Blogs</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png">
+                <div class="layer">
+
+                    <h3>Routing</h3>
+                    <p>Router Config steps</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="images/work-2.png">
+                <div class="layer">
+                    <h3>Switching</h3>
+                    <p>Switch Config steps</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="images/work-3.png">
+                <div class="layer">
+                    <h3>Fireqall</h3>
+                    <p>Switch Config steps</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="btn">See more...</a>
+    </div>
+</div>
+
+<!-- ********contect*******-->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact me</h1>
+                <p><i class="fa-solid fa-envelope"></i> pingkbraut@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i> +977 9845619440</p>
+                <div class="social-icons">
+                    <a href="www.facebook.com/kbraut.official/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="www.github.com/kbraut"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/kbraut/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@KB-Raut"><i class="fa-brands fa-youtube"></i></a>
+    
+                </div>
+
+                <a href="Documents/my_cvv.pdf" download class="btn btn2">Download CV</a>
+
+            </div>
+            <div class="contact-right">
+                <form  name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Your Email",required>
+                    <textarea name="Massage"  rows="6" placeholder="Your Massage"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+
+                <span id="msg"></span>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <div class="copyright">
+        <p>copyright <i class="fa-regular fa-copyright"></i> ---</p>
+    </div>
+</div>
+
+
+
+
+
+
+<!--**********java script*************-->
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            //display active colour tab
+            event.currentTarget.classList.add("active-link");
+            //disply active description
+            document.getElementById(tabname).classList.add("active-tab");
+
+
+        }
+
+    </script>
+
+<!-- side menu-->
+    <script>
+        var sidemenu =document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+
+    </script>
+  
+  <script>
+    /* How to Send contact form data on Google sheets  reference: "https://www.youtube.com/watch?v=0YFrGy_mzjY&t=6473s" */
+
+    const scriptURL = 'https://script.google.com/macros/s/your_google_scrpits'
+    const form = document.forms['submit-to-google-sheet']
+  
+    const msg =document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML= "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML=""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+    
+</body>
+</html>
+>>>>>>> 2fbc629de1f50cf8850193e0e1bd04b95ea93614
