@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+This tool provides detailed information about IPv4 subnets, including network addresses, subnet masks, usable host ranges, Wildcard Mask, IP classes, and more. It helps in efficient IP address planning and management.
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  
+    <style>
+        body { 
+
+        }
+        input, select, button { 
+            margin: 10px 0; 
+            padding: 10px; 
+            width: 100%; 
+            box-sizing: border-box; 
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .result { 
+            margin-top: 20px; 
+            font-weight: bold; 
+            text-align: left; 
+            display: block; 
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+  
+    <h2></h2>
+    <labe1>IP Address:</labe1>
+    <input type="text" id="ip" placeholder="192.168.1.0">
+    <label>Subnet Mask:</label>
+    <select id="subnet"></select>
+    <br>
+    <button onclick="calculateSubnet()">Calculate</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        // Populate CIDR options dynamically
+        window.onload = function() {
+            let select = document.getElementById("subnet");
+            for (let i = 1; i <= 32; i++) {
+                let mask = getSubnetMask(i);
+                let option = document.createElement("option");
+                option.value = i;
+                option.text = `${mask} (/${i})`;
+                if (i === 24) option.selected = true;
+                select.appendChild(option);
+            }
+        };
+
+        function calculateSubnet() {
+            let ip = document.getElementById("ip").value;
+            let subnetBits = parseInt(document.getElementById("subnet").value);
+
+            if (!validateIP(ip)) {
+                document.getElementById("result").innerHTML = "<p style='color:red;'>Invalid IP Address!</p>";
+                return;
+            }
+
+            let subnetMask = getSubnetMask(subnetBits);
+            let wildcardMask = getWildcardMask(subnetMask);
+            let networkID = getNetworkID(ip, subnetMask);
+            let broadcastID = getBroadcastID(networkID, subnetMask);
+            let firstIP = getFirstUsableIP(networkID, subnetBits);
+            let lastIP = getLastUsableIP(broadcastID, subnetBits);
+            let totalHosts = subnetBits < 31 ? Math.pow(2, (32 - subnetBits)) - 2 : Math.pow(2, (32 - subnetBits));
+            let subnetIncrement = 256 - parseInt(subnetMask.split(".")[3]);
+            let ipClass = getIPClass(ip);
+
+            document.getElementById("result").innerHTML = `
+                <p>Class: ${ipClass}</p>
+                <p>Subnet Mask: ${subnetMask}</p>
+                <p>Wildcard Mask: ${wildcardMask}</p>
+                <p>Subnet Increment: ${subnetIncrement}</p>
+                <p>Network ID: ${networkID}</p>
+                <p>First Usable IP: ${subnetBits < 31 ? firstIP : "N/A (Point-to-Point)"}</p>
+                <p>Last Usable IP: ${subnetBits < 31 ? lastIP : "N/A (Point-to-Point)"}</p>
+                <p>Broadcast Address: ${subnetBits < 31 ? broadcastID : "N/A (Point-to-Point)"}</p>
+                <p>Total Usable Hosts: ${subnetBits < 31 ? totalHosts : "2 (Point-to-Point)"}</p>
+            `;
+        }
+
+        function validateIP(ip) {
+            let parts = ip.split(".");
+            return parts.length === 4 && parts.every(part => !isNaN(part) && part >= 0 && part <= 255);
+        }
+
+        function getSubnetMask(bits) {
+            return ((-1 << (32 - bits)) >>> 0)
+                .toString(2).match(/.{8}/g)
+                .map(bin => parseInt(bin, 2))
+                .join(".");
+        }
+
+        function getWildcardMask(subnetMask) {
+            return subnetMask.split(".").map(part => 255 - parseInt(part)).join(".");
+        }
+
+        function getNetworkID(ip, subnetMask) {
+            let ipParts = ip.split(".").map(Number);
+            let maskParts = subnetMask.split(".").map(Number);
+            return ipParts.map((part, i) => part & maskParts[i]).join(".");
+        }
+
+        function getBroadcastID(networkID, subnetMask) {
+            let networkParts = networkID.split(".").map(Number);
+            let maskParts = subnetMask.split(".").map(Number);
+            return networkParts.map((part, i) => part | (~maskParts[i] & 255)).join(".");
+        }
+
+        function getFirstUsableIP(networkID, subnetBits) {
+            if (subnetBits >= 31) return networkID;
+            let parts = networkID.split(".").map(Number);
+            parts[3] += 1;
+            return parts.join(".");
+        }
+
+        function getLastUsableIP(broadcastID, subnetBits) {
+            if (subnetBits >= 31) return broadcastID;
+            let parts = broadcastID.split(".").map(Number);
+            parts[3] -= 1;
+            return parts.join(".");
+        }
+
+        function getIPClass(ip) {
+            let firstOctet = parseInt(ip.split(".")[0]);
+            if (firstOctet >= 1 && firstOctet <= 126) return "A";
+            if (firstOctet >= 128 && firstOctet <= 191) return "B";
+            if (firstOctet >= 192 && firstOctet <= 223) return "C";
+            if (firstOctet >= 224 && firstOctet <= 239) return "D (Multicast)";
+            if (firstOctet >= 240 && firstOctet <= 255) return "E (Experimental)";
+            return "Unknown";
+        }
+    </script>
+
+</body>
+</html>
